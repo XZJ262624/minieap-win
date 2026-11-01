@@ -1,0 +1,10 @@
+# Copy to minieap.conf in the working directory, then fill in credentials.
+username=YOUR_USERNAME
+password=YOUR_PASSWORD
+# Replace with the full device name returned by --list-interfaces.
+nic=\Device\NPF_{YOUR-ADAPTER-GUID}
+if-impl=libpcap
+module=rjv3
+service=students
+daemonize=0
+pid-file=F:\Tools\MiniEAP\minieap-i226v.pid

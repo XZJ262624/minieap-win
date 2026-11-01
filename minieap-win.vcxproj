@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a105ee31-59e4-4b3f-8de5-5038db5d5b0d}</ProjectGuid>
+    <RootNamespace>minieapwin</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;STATIC_GETOPT;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)compat;$(ProjectDir)third_party\npcap-sdk\Include;$(ProjectDir)src\minieap\include;$(ProjectDir)src\minieap\packet_plugin\rjv3;$(ProjectDir)src\minieap\packet_plugin\rjv3\rjv3_hashes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wpcap.lib;Packet.lib;Ws2_32.lib;Iphlpapi.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)third_party\npcap-sdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>wpcap.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;STATIC_GETOPT;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)compat;$(ProjectDir)third_party\npcap-sdk\Include;$(ProjectDir)src\minieap\include;$(ProjectDir)src\minieap\packet_plugin\rjv3;$(ProjectDir)src\minieap\packet_plugin\rjv3\rjv3_hashes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wpcap.lib;Packet.lib;Ws2_32.lib;Iphlpapi.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)third_party\npcap-sdk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>wpcap.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;STATIC_GETOPT;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)compat;$(ProjectDir)third_party\npcap-sdk\Include;$(ProjectDir)src\minieap\include;$(ProjectDir)src\minieap\packet_plugin\rjv3;$(ProjectDir)src\minieap\packet_plugin\rjv3\rjv3_hashes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)third_party\npcap-sdk\Lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wpcap.lib;Packet.lib;Ws2_32.lib;Iphlpapi.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>wpcap.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;NOMINMAX;STATIC_GETOPT;_WIN32_WINNT=0x0A00;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)compat;$(ProjectDir)third_party\npcap-sdk\Include;$(ProjectDir)src\minieap\include;$(ProjectDir)src\minieap\packet_plugin\rjv3;$(ProjectDir)src\minieap\packet_plugin\rjv3\rjv3_hashes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <CompileAs>CompileAsC</CompileAs>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)third_party\npcap-sdk\Lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wpcap.lib;Packet.lib;Ws2_32.lib;Iphlpapi.lib;delayimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <DelayLoadDLLs>wpcap.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="compat\getopt.c" />
+    <ClCompile Include="compat\win32_compat.c" />
+    <ClCompile Include="src\minieap\config.c" />
+    <ClCompile Include="src\minieap\eap_state_machine.c" />
+    <ClCompile Include="src\minieap\if_impl\if_impl.c" />
+    <ClCompile Include="src\minieap\if_impl\libpcap\if_impl_libpcap.c" />
+    <ClCompile Include="src\minieap\md5.c" />
+    <ClCompile Include="src\minieap\minieap.c" />
+    <ClCompile Include="src\minieap\packet_builder.c" />
+    <ClCompile Include="src\minieap\packet_plugin\packet_plugin.c" />
+    <ClCompile Include="src\minieap\packet_plugin\printer\packet_plugin_printer.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3_keepalive.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3_priv.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3_prop.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\byte_order.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\checkV4.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjcrc16.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjencode.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjmd5.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjripemd128.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjsha1.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjtiger_sbox.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjtiger.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjwhirlpool_sbox.c" />
+    <ClCompile Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjwhirlpool.c" />
+    <ClCompile Include="src\minieap\util\conf_parser.c" />
+    <ClCompile Include="src\minieap\util\linkedlist.c" />
+    <ClCompile Include="src\minieap\util\logging.c" />
+    <ClCompile Include="src\minieap\util\misc.c" />
+    <ClCompile Include="src\minieap\util\net_util.c" />
+    <ClCompile Include="src\minieap\util\packet_util.c" />
+    <ClCompile Include="src\minieap\util\pid_lock.c" />
+    <ClCompile Include="src\minieap\util\sched_alarm.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="compat\arpa\inet.h" />
+    <ClInclude Include="compat\getopt.h" />
+    <ClInclude Include="compat\net\if.h" />
+    <ClInclude Include="compat\netinet\in.h" />
+    <ClInclude Include="compat\unistd.h" />
+    <ClInclude Include="compat\win32_compat.h" />
+    <ClInclude Include="src\minieap\include\conf_parser.h" />
+    <ClInclude Include="src\minieap\include\config.h" />
+    <ClInclude Include="src\minieap\include\eap_state_machine.h" />
+    <ClInclude Include="src\minieap\include\eth_frame.h" />
+    <ClInclude Include="src\minieap\include\gbconv.h" />
+    <ClInclude Include="src\minieap\include\if_impl.h" />
+    <ClInclude Include="src\minieap\include\linkedlist.h" />
+    <ClInclude Include="src\minieap\include\logging.h" />
+    <ClInclude Include="src\minieap\include\md5.h" />
+    <ClInclude Include="src\minieap\include\minieap_common.h" />
+    <ClInclude Include="src\minieap\include\misc.h" />
+    <ClInclude Include="src\minieap\include\module_init.h" />
+    <ClInclude Include="src\minieap\include\net_util.h" />
+    <ClInclude Include="src\minieap\include\packet_builder.h" />
+    <ClInclude Include="src\minieap\include\packet_plugin.h" />
+    <ClInclude Include="src\minieap\include\packet_util.h" />
+    <ClInclude Include="src\minieap\include\pid_lock.h" />
+    <ClInclude Include="src\minieap\include\sched_alarm.h" />
+    <ClInclude Include="src\minieap\include\types.h" />
+    <ClInclude Include="src\minieap\include\ustd.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3_keepalive.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3_priv.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3_prop.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\packet_plugin_rjv3.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\ampheck.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\byte_order.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\checkV4.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjcrc16.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjencode.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjmd5.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjripemd128.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjsha1.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjtiger.h" />
+    <ClInclude Include="src\minieap\packet_plugin\rjv3\rjv3_hashes\rjwhirlpool.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

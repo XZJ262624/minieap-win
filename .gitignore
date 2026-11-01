@@ -1,0 +1,51 @@
+# Visual Studio user state and caches
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio build directories
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+/x64/
+/minieap-win/x64/
+/Win32/
+/minieap-win/Win32/
+
+# Compiler and linker outputs
+*.obj
+*.pch
+*.pdb
+*.idb
+*.ilk
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
+*.recipe
+*.exp
+*.exe
+*.dll
+
+# Test build outputs and editor backup files
+/port-validation/**/*.lib
+/port-validation/*
+!/port-validation/before-windows-port.zip
+/MiniEAP-Windows移植开发总结.txt
+/.local-validation/
+*.dmp
+*.mdmp
+*.pid
+*~
+
+# Local authentication configuration (may contain credentials)
+minieap.conf
+*.local.conf
+*.secrets.conf
+credentials.*
+.env
+.env.*
+!.env.example
